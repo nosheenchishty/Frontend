@@ -1,0 +1,42 @@
+:root {
+  color-scheme: light;
+  font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+  --accent: #db2777;
+  --surface: #ffffff;
+  --surface-muted: #f5f7fb;
+  --border: #d7dce6;
+  --text: #142033;
+  --text-muted: #556277;
+  background: linear-gradient(180deg, #f7fafc 0%, #eef3f9 100%);
+  color: var(--text);
+}
+
+* { box-sizing: border-box; }
+body { margin: 0; min-height: 100vh; }
+button, input, select, textarea { font: inherit; }
+button { cursor: pointer; }
+#root { min-height: 100vh; }
+.page-shell { width: min(1100px, calc(100% - 32px)); margin: 0 auto; padding: 32px 0 48px; }
+.hero { display: flex; justify-content: space-between; gap: 24px; align-items: flex-start; margin-bottom: 28px; }
+.hero h1 { margin: 8px 0 12px; font-size: clamp(2rem, 4vw, 3.2rem); }
+.hero-copy { max-width: 720px; margin: 0; color: var(--text-muted); line-height: 1.6; }
+.eyebrow { margin: 0; color: var(--accent); font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; font-size: 0.78rem; }
+.status-card, .panel, .info-card, .list-card { background: var(--surface); border: 1px solid var(--border); border-radius: 20px; box-shadow: 0 16px 30px rgba(15, 23, 42, 0.06); }
+.status-card { min-width: 220px; padding: 20px; display: grid; gap: 6px; }
+.grid-layout { display: grid; gap: 20px; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.panel { padding: 24px; }
+.stack { display: grid; gap: 14px; }
+.role-picker, .actions { display: flex; flex-wrap: wrap; gap: 12px; }
+.tag, .nav-button, .primary-button { border-radius: 999px; border: 1px solid var(--border); background: white; color: var(--text); padding: 10px 16px; }
+.tag.active, .nav-button.active, .primary-button { border-color: var(--accent); background: var(--accent); color: white; }
+.nav-button { width: 100%; text-align: left; }
+label { display: grid; gap: 8px; font-weight: 600; }
+input, select, textarea { width: 100%; padding: 12px 14px; border-radius: 14px; border: 1px solid var(--border); background: white; }
+.message-banner { margin: 0; border-radius: 14px; padding: 12px 14px; background: var(--surface-muted); }
+.list { display: grid; gap: 10px; padding-left: 20px; }
+.list-card { display: flex; justify-content: space-between; gap: 16px; align-items: center; padding: 18px; }
+.pill { display: inline-flex; width: fit-content; padding: 6px 12px; border-radius: 999px; background: var(--surface-muted); color: var(--accent); font-size: 0.82rem; font-weight: 700; }
+@media (max-width: 900px) {
+  .hero, .grid-layout { grid-template-columns: 1fr; display: grid; }
+  .page-shell { width: min(100% - 20px, 1100px); }
+}
